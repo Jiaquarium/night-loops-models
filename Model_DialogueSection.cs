@@ -13,4 +13,5 @@ public class Model_DialogueSection
     public bool isUnskippable;
     public bool noContinuationIcon;
     public bool waitForTimeline;
+    public bool autoNext;
 }

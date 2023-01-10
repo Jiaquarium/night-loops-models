@@ -25,4 +25,6 @@ public class Model_SaveData
     public Model_MynesMirror mynesMirrorData { get; set; }
 
     public Model_PianoStateData[] pianosStateData { get; set; }
+
+    public Model_Achievements achievements { get; set; }
 }

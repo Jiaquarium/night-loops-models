@@ -31,8 +31,14 @@ public class Model_DialogueNode
     public string type; // e.g. read,
     public InputMode inputMode;
     public Script_FullArt fullArt;
+    
+    [Tooltip("Fade speed when first starting full art dialogue AND speed to fade out last FA if was kept up and different.")]
     public FadeSpeeds fadeIn;
+    
+    [Tooltip("Fade speed for switching out full arts on next node.")]
     public FadeSpeeds fadeTransition = FadeSpeeds.None;
+    
+    [Tooltip("Fade speed when removing full art dialogue.")]
     public FadeSpeeds fadeOut;
     
     // Option to leave up the current Full Art. Next Full Art node must be set as fadeIn: FadeSpeeds.None.
@@ -50,6 +56,14 @@ public class Model_DialogueNode
     public FadeSpeeds dialogueFadeInSpeed = FadeSpeeds.None;
     public bool isCustomDialogueFadeOut;
     public FadeSpeeds dialogueFadeOutSpeed = FadeSpeeds.None;
+
+    /// <summary>
+    /// Options to include certain dyanmic Keys in the string.
+    /// Opt into these because these are very slow.
+    /// </summary>
+    public bool isFormatInventoryKey;
+    public bool isFormatSpeedKey;
+    public bool isFormatMaskCommandKey;
 }
 
 public enum DialogueTypingSpeed
