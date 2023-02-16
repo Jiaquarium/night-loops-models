@@ -27,4 +27,6 @@ public class Model_SaveData
     public Model_PianoStateData[] pianosStateData { get; set; }
 
     public Model_Achievements achievements { get; set; }
+
+    public Model_AutoSaves autoSaves { get; set; }
 }

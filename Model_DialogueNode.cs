@@ -31,6 +31,7 @@ public class Model_DialogueNode
     public string type; // e.g. read,
     public InputMode inputMode;
     public Script_FullArt fullArt;
+    public FullArtPortrait fullArtOverride;
     
     [Tooltip("Fade speed when first starting full art dialogue AND speed to fade out last FA if was kept up and different.")]
     public FadeSpeeds fadeIn;
@@ -64,6 +65,24 @@ public class Model_DialogueNode
     public bool isFormatInventoryKey;
     public bool isFormatSpeedKey;
     public bool isFormatMaskCommandKey;
+
+    public Script_FullArt FullArt
+    {
+        get
+        {
+            var myFullArt = fullArt;
+
+            if (fullArtOverride == FullArtPortrait.None)
+                return myFullArt;
+
+            var fullArtManager = Script_FullArtManager.Control;
+            
+            if (fullArtManager != null)
+                myFullArt = fullArtManager.GetFullArt(fullArtOverride);
+            
+            return myFullArt;
+        }
+    }
 }
 
 public enum DialogueTypingSpeed

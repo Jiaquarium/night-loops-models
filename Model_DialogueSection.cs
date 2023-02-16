@@ -14,4 +14,5 @@ public class Model_DialogueSection
     public bool noContinuationIcon;
     public bool waitForTimeline;
     public bool autoNext;
+    public FullArtPortrait fullArtOverride;
 }
