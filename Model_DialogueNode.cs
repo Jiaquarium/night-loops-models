@@ -23,6 +23,9 @@ public class Model_DialogueNode
     [Tooltip("Force choices. You can also set >1 children Nodes to activate choices.")]
     public bool isChoices;
     
+    [Tooltip("Force to not use choice canvas on canvas setup for Default Psychic Nodes.")]
+    public bool isForceNoDefaultChoiceCanvas;
+    
     public Script_DialogueNode[] children;
     public string choiceText;
     public string action;
@@ -65,6 +68,7 @@ public class Model_DialogueNode
     public bool isFormatInventoryKey;
     public bool isFormatSpeedKey;
     public bool isFormatMaskCommandKey;
+    public bool isFormatInteractKey;
 
     public Script_FullArt FullArt
     {
@@ -78,7 +82,7 @@ public class Model_DialogueNode
             var fullArtManager = Script_FullArtManager.Control;
             
             if (fullArtManager != null)
-                myFullArt = fullArtManager.GetFullArt(fullArtOverride);
+                myFullArt = fullArtManager.GetFullArt(fullArtOverride, out _);
             
             return myFullArt;
         }

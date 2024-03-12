@@ -5,6 +5,11 @@
 /// </summary>
 public class Model_SettingsData
 {
-    public Model_KeyBindsData keyBindsData;
+    public string rewiredKeyboardMapDefault;
+    public string rewiredJoystickMapDefault;
+    
+    // The type of joystick the joystick map belongs to.
+    public Script_PlayerInputManager.JoystickKnownState savedJoystickMapKnownState;
+    
     public Model_SystemData systemData;
 }
